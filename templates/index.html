@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>Profile</title>
+	<style type=text/css>
+        {% load static %}
+        p1 {
+  			font-family: "Times New Roman", Times, serif;
+  			color: black;
+  			font-size: 18px;
+		}
+        body {
+            background-image: url("{% static 'image3_d.jpg' %}");
+            background-size: cover; /* Adjust the size as needed */
+            background-repeat: no-repeat;
+        }
+		.leftdiv
+		{
+		float: left;
+		}
+		.middlediv
+		{
+		float: left;
+		background-color:url("{% static 'image3_d.jpg' %}");
+		}
+		.rightdiv
+		{
+		float: left;
+		}
+		div{
+		padding : 1%;
+		color: white;
+		background-color: url("{% static 'image3_d.jpg' %}");
+		width: 30%;
+		height: 680px;
+		border: solid black;
+		}
+	</style>
+</head>
+<body>
+    <h1> Profile </h1>
+	<div class="leftdiv">
+		<h1>Personal Details</h1>
+        <img src="{% static 'WhatsApp Image 2023-07-11 at 12.50.27 PM.jpeg' %} "width="200" height="200">
+        <p>
+            {% for task in tasks %}
+            <p1>{{ task.content }}</p1>
+			<br>
+            {% endfor %}
+        </p>
+		<a href="http://127.0.0.1:8000/blogApp/blog">
+        	<img src="{% static 'imge6_d.jpg' %} "width="30" height="30">
+    	</a>
+	</div>
+	<div class="middlediv">
+		<h1>Professional Details</h1>
+		<p>
+			{% for task2 in tasks2 %}
+		<p1>{{ task2.details }}</p1>
+			<br>
+            {% endfor %}
+
+		</p>
+		<a href="https://www.linkedin.com/in/adarsh-jatti-5b9333200/">
+        	<img src="{% static 'linkedin.png' %} "width="45" height="45">
+    	</a>
+		<br>
+		<br>
+		<a href="https://drive.google.com/file/d/1MluV9AGh9cuKsjLW1vQYgpxs3St5m1jS/view?usp=drive_link">
+        	<img src="{% static 'icon_R.jpeg' %} "width="45" height="45">
+    	</a>
+
+	</div>
+	<div class="rightdiv">
+		<h1>Projects</h1>
+		<p>
+			{% for task3 in tasks3 %}
+            <p1>{{ task3.projects_name }}</p1>
+			<br>
+            {% endfor %}
+
+		</p>
+        <a href="https://github.com/AdarshJatti1947">
+        	<img src="{% static 'github-mark.png' %} "width="30" height="30">
+    	</a>
+		<br>
+		<br>
+
+
+
+
+	</div>
+</body>
+</html>

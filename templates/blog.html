@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Profile</title>
+	<style type=text/css>
+        {% load static %}
+        p1 {
+  			font-family: "Times New Roman", Times, serif;
+  			color: black;
+  			font-size: 18px;
+		}
+        body {
+            background-image: url("{% static 'image2_d.jpg' %}");
+            background-size: cover; /* Adjust the size as needed */
+            background-repeat: no-repeat;
+        }
+
+		}
+	</style>
+</head>
+<body>
+    <p>
+        {% for i in tasks4 %}
+        <p1>{{i.post_title}}</p1>
+        <form method="post" action="{% url 'my_function' %}">
+            {% csrf_token %}
+            <input type="hidden" name="my_value" value="{{i.post1}}">
+            <input type="submit" value="Click to read the blog">
+        </form>
+
+        <br>
+        <br>
+
+        {% endfor %}
+    </p>
+
+</body>
+</html>
